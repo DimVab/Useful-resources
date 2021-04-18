@@ -35,6 +35,7 @@
 .read-later {
   padding: 70px 0;
   position: relative;
+  min-height: 100vh;
 }
 
 .main_read-later {
