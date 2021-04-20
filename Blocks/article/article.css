@@ -1,0 +1,15 @@
+.article {
+  display: block;
+  text-decoration: none;
+  color: #06266F;
+  margin-bottom: 3px;
+}
+
+.article:hover {
+  opacity: .7;
+  transition: opacity 0.5s;
+}
+
+.article_bold {
+  font-weight: 700;
+}
