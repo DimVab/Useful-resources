@@ -1,0 +1,23 @@
+.navigation__item {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navigation__item:hover {
+opacity: .7;
+transition: opacity 0.5s;
+}
+
+@media screen and (max-width: 1279px) {
+  .navigation__item {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navigation__item {
+    font-size: 10px;
+  }
+}

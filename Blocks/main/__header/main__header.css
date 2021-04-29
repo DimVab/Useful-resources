@@ -1,0 +1,9 @@
+.main__header {
+  margin-left: 150px;
+}
+
+@media screen and (max-width: 1289px) {
+  .main__header {
+    margin: 0 auto;
+  }
+}
