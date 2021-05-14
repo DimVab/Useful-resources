@@ -1,44 +1,24 @@
+@import url(../Blocks/root/root.css);
+@import url(../Blocks/root/_it/root__it.css);
+/* блок navigation */
+@import url(../Blocks/navigation/navigation.css);
+@import url(../Blocks/navigation/_place/navigation_place_it.css);
+@import url(../Blocks/navigation/__item/navigation__item.css);
+/* блок main */
+@import url(../Blocks/main/main.css);
+@import url(../Blocks/main/__bg/main__bg.css);
+@import url(../Blocks/main/__header/main__header.css);
+@import url(../Blocks/main/__title/main__title.css);
+@import url(../Blocks/main/__title/_place/main__title_place_main.css);
+@import url(../Blocks/main/__list/main__list.css);
+@import url(../Blocks/main/__text/main__text.css);
+/* блок footer */
+@import url(../Blocks/footer/footer.css);
+@import url(../Blocks/footer/_place/footer_place_it.css);
+/* блок article */
 @import url(../Blocks/article/article.css);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-.navigation {
-  min-height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
-  position: fixed;
-  top: 0;
-}
-
-.navigation_it {
-  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-}
-
-.navigation__section {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.navigation__section:hover {
-  opacity: .7;
-  transition: opacity 0.5s;
-}
-
-.it {
-  padding: 70px 0;
-  position: relative;
-  background-color: #DBEDFB;
-}
 
 .main-it {
   display: flex;
@@ -86,25 +66,4 @@
   color: white;
   font-weight: normal;
   font-size: 16px;
-}
-
-footer {
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-  /* background-color: brown; */
-  background-image: linear-gradient(to right, brown, #8B0000);
-  color: white;
-}
-
-.footer_it {
-  background-image: none;
-  background-color: #043E6B;
 }

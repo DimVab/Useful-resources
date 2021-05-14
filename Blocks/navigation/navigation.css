@@ -1,12 +1,20 @@
 .navigation {
   min-height: 50px;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  row-gap: 10px;
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
   position: fixed;
   top: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .navigation {
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 767px) {

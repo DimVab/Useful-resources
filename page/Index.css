@@ -1,14 +1,16 @@
 @import url(../Blocks/root/root.css);
 /* блок navigation */
 @import url(../Blocks/navigation/navigation.css);
-@import url(../Blocks/navigation/_place_index/navigation_place_index.css);
+@import url(../Blocks/navigation/_place/navigation_place_index.css);
 @import url(../Blocks/navigation/__item/navigation__item.css);
 /* блок main */
 @import url(../Blocks/main/main.css);
+@import url(../Blocks/main/__bg/main__bg.css);
 @import url(../Blocks/main/__header/main__header.css);
 @import url(../Blocks/main/__title/main__title.css);
+@import url(../Blocks/main/__title/_place/main__title_place_main.css);
 @import url(../Blocks/main/__list/main__list.css);
 @import url(../Blocks/main/__text/main__text.css);
 /* блок footer */
 @import url(../Blocks/footer/footer.css);
-@import url(../Blocks/footer/_place_main/footer_place_main.css);
+@import url(../Blocks/footer/_place/footer_place_main.css);

@@ -1,12 +1,8 @@
 .main {
-  width: 100vw;
-  height: calc(100vh - 50px);
+  /* width: 100vw; */
+  min-height: calc(100vh - 50px);
   margin: 0 auto;
   padding: 65px 20px;
-  background-image: url(../../images/library-1.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1289px) {
