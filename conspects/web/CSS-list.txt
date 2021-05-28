@@ -1,0 +1,246 @@
+CSS-свойства
+Группы свойств
+1. Animation
+2. Background
+3. Border
+4. Color
+5. Dimention
+6. Generated Content
+7. Flexible Box Layout
+8. Font
+9. List
+10. Margin
+11. Multi-column Layout Properties (расположение текстов в колонках в рамках одного блока)
+12. Outline
+13. Padding
+14. Print
+15. Table
+16. Text
+17. Transform
+18. Transitions (интересно)
+19. Visual formatting
+
+
+1. Animation - используется в основном для загрузки или анимирования логотипа (в целом редко)
+
+1.1) animation
+1.2) animation-delay
+1.3) animation-direction
+1.4) animation-duration
+1.5) animation-fill-mode
+1.6) animation-iteration-count
+1.7) animation-name
+1.8) animation-play-state
+1.9) animation-timing-function
+
+2. Background - фон
+
+2.1) background - можно записать все свойства по очереди (:green url('...') no-repeat 50% 50%)
+2.2) background-attachment
+2.3) background-clip
+2.4) background-color - цвет фона
+2.5) background-image - картинка на фоне url()
+2.6) background-origin
+2.7) background-position - расположение фона (center - по центру, right-bottom - внизу справа (две оси); 150px -50px - сдвиг от верхнего левого угла по пикселям, по вертикали - на 50px вверх); left, right - горизонтальное выравнивание; top, bottom - вертикальное выравнивание
+2.8) background-repeat: no-repeat - повторение фоновой картинки / repeat / repeat-y - повторение по вертикали
+2.9) background-size - размер фона (cover - фоновое изображение целиком вписывается в блок, но обрезается там, где не влезло; contain - умещает всю картинку подгоняя по размеру, соответственно оставляя пустое место там, где картинка заканчивается; в пикселях - тоже самое, но по указанному размеру, может повторяться; stretch - растянуть)
+
+3. Border - граница
+
+3.1) border - ширина рамки (можно записать 3 свойства подряж: ширина, стиль, цвет)
+3.2) border-bottom (то же самое и top)
+3.3) border-bottom-color
+3.4) border-bottom-left-radius
+3.5) border-bottom-right-radius
+3.6) border-bottom-style
+3.7) border-bottom-width
+3.8) border-color
+3.9) border-image
+3.10) border-image-outset
+3.11) border-image-repeat
+3.12) border-image-slice
+3.13) border-image-source
+3.14) border-image-width
+3.15) border-left (то же самое и right)
+3.16) border-left-color
+3.17) border-left-style
+3.18) border-left-width
+3.19) border-radius
+3.20) border-style - стиль границы (solid - непрерывная, dashed - пунктирная, dotted - точечная, double - двойная)
+3.21) border-width
+
+4. Color
+
+4.1) color - цвет (текста?)
+4.2) opacity - прозрачность: n (от 0 до 1) (и текст и блок)
+
+5. Dimention
+
+5.1) height
+5.2) min-height - расширяется, если контент будет переплнять высоту
+5.3) max-height - если контента будет больше, чем максимальная высота, контент будет вылазить
+5.4) width
+5.5) min-width
+5.6) max-width
+
+6. Generated Content
+
+6.1) content - наполняет контент псевдоэлементами (::before { content: '123' } ). Обычно используется для дополнительного фона или градиента (а не для вставки чисел или букв) 
+6.2) quotes - для стилизации кавычек
+6.3) counter-reset - добавляет в списки нумерацию (счётчик)
+6.4) counter-increment 
+
+7. Flexible Box Layout
+
+7.1) align-content: flex-start / flex-end / center / space-between / space-around / stretch - растягивание элементов по второстепенной оси (как justify content)
+7.2) align-items - выравнивание по второстепенной оси: stretch / flex-start / flex-end / center / baseline
+7.3) align-self - выравнивание одного элемента по второстепенной оси (относительно главной оси)
+7.4) flex - укороченная запись flex grow, flex-shrink и flex-basis
+7.5) flex-basis - ширина или высота (в зависимости от главной оси) - базовый размер
+7.6) flex-direction - направление главной оси (row / row-reverse / column / column-reverse)
+7.7) flex-flow: <'flex-direction'>, <'flex-wrap'> - короткая запись для двух свойств
+7.8) flex-grow - (число) растягивание отдельного элемента в свободном пространстве (пропорционально числу)
+7.9) flex-shrink - (число) ужимание элемента (в приоритете перед другими во время сворачивания)
+7.10) flex-wrap: nowrap, wrap, wrap-reverse - перенос элементов на новую строку
+7.11) justify-content - расстояние между элементами; выравнивание по основной оси: flex-start / flex-end / center / space-between / space-around / space-evenly
+7.12) order - порядок элементов во флексе (применяется только к тем, у кого есть номер; элементы без номеров по умолчанию стоят в начале)
+
+8. Font
+
+8.1) font - можно записать сразу несколько свойств
+8.2) font-family - семейство шрифтов (используются слева направо; если слева нет, выбираются правее; если нет ни одного, задействуется системный шрифт)
+8.3) font-size - размер шрифта
+8.4) font-size-ajust
+8.5) font-stretch
+8.6) font-style - делает курсив (italic)
+8.7) font-variant
+8.8) font-weight - жирность шрифта (normal / bold / либо в px от 100 до 900)
+
+9. List
+
+9.1) list-style - символ элементов списка (none, др)
+9.2) list-style-image (эти 3 исп редко)
+9.3) list-style-position
+9.4) list-style-type
+
+10. Margin
+
+10.1) margin - общий внешний отступ (число или auto - выравнивание блока по центру, устанавливает максимальные значения по горизонтали справа и слева)
+(2 значения: вертикаль и горизонталь; 3 значения: верх, бока, низ)
+10.2) margin-top/bottom/left/right - внешний отступ с одной стороны
+
+11. Padding
+(запись аналогично margin)
+11.1) padding - внутренние отступы
+11.2) padding-top/bottom/left/right
+
+12. Multi-column Layout Properties 
+
+12.1) column-count
+12.2) column-fill
+12.3) column-gap
+12.4) column-rule
+12.5) column-rule-color
+12.6) column-rule-style
+12.7) column-rule-width
+12.8) column-span
+12.9) column-width
+12.10) columns
+
+13. Outline
+
+13.1) outline - внешняя рамка (используется редко)
+13.2) outline-color
+13.3) outline-offset
+13.4) outline-style
+13.5) outline-width
+
+14. Print
+
+разрыв страницы при печати
+14.1) print-break-after
+14.2) print-break-before
+14.3) print-break-inside
+
+15. Table
+
+15.0) border - такая же граница, как у блоков
+15.1) border-collapse: collapse - схлопывание рамок между ячеек (рамки слипаются)
+15.2) border-spacing - расстояние между ячейками (в px) (не работает вместе с collapse)
+15.3) caption-side
+15.4) empty-cells
+15.5) table-layout: fixed - фиксированные или растягивающиеся ячейки
+
+16. Text
+
+16.1) direction - направление текста
+16.2) tab-size 
+16.3) text-align - выравнивание текста (по умолчанию - по левому краю)
+16.4) text-align-last - выравнивание последней строки
+16.5) text-decoration - подчёркивание: overline / underline / none / line-through
+16.6) text-decoration-color
+16.7) text-decoration-line
+16.8) text-decoration-style
+16.9) text-indent - отступ для первой строки (в px)
+16.10) text-justify
+16.11) text-overflow - обрезание текста (по умолч - clip - слово обрезается до ширины блока): clip / ellipsis - многоточие
+16.12) text-shadow - тень текста (x y размытие (в px) color - по осям x, y, степень размытия и цвет тени)
+16.13) text-transform: uppercase / lowercase
+16.14) line-height - высота строки (интерлиньяж) (размер шрифта+расстояние между строками). нормальным считается размер x1.5 от размера шрифта
+16.15) vertical-align - выравнивание текста в рамках ячейки
+16.16) letter-spacing - дистанция между буквами
+16.17) word-spacing - дистанция между словами
+16.18) white-space - перенос текста (переносить ли текст или нет): nowrap
+16.19) word-break
+16.20) word-wrap
+
+17. Transform
+
+видоизменение, масштабирование блока
+17.1) backface-visability
+17.2) perspective
+17.3) perspective-origin
+17.4) transform: rotate(45deg) - развернуть на 45град. / translateX(10px) / translateY - смещение по осям X / Y
+(* для анимирования блока. здесь в рендеринге участвует видеокарта, так лучше для оптимизации)
+17.5) transform-origin
+17.6) transform-style
+
+18. Transitions
+
+переходы (применяются для сглаженной анимации, например при наведении мыши)
+18.1) transition - .2s (2 милисекунды) (в милисекундах)
+18.2) transition-delay
+18.3) transition-duration
+18.4) transition-property
+18.5) transition-timing-function
+
+19. Visual Formating
+
+19.1) display: block / inline / inline-block / flex / inline-flex
+19.2) position: static, absolute, relative, fixed, inherit
+19.3) top - отступ от верха
+(* отступ в 100% применыется для подсказок сбоку от блока)
+19.4) right
+19.5) bottom
+19.6) left
+19.7) float - обтекание блока: right, left, top, bottom
+19.8) clear - обнуление потока (?)
+19.9) z-index - уровень наложения (чем выше число, тем выше элемент)
+19.10) overflow - поведение элементов при переполнении блока (visible - по умолч всё видно, auto - скрывать зоны, которые выходят за границы, но оставлять скролл, scroll - всегда показывать скролл, hidden - скрыть не поместившиеся элементы без скролла)
+19.11) overflow-x
+19.12) overflow-y
+добавив одному из свойств значение, отличное от visible, оно перестает работать у другого (??? не понял ???)
+19.13) resize - изменение разомеров в блоке textarea (none - убрать возможность изменять размеры)
+19.14) clip
+19.15) visability
+19.16) cursor - вид курсора (например при наведении)
+19.17) box-shadow - тень блока (x, y, размытие (в px), цвет)
+19.18) box-sizing: border-box - ширина фиксированная (границы уменьшают размеры элемента / content-box - ширина включает блок+отступы (отступы расширяют элемент)
+
+
+20. object-fit: - определяет как заменяемое содержимое (видео, изображение) заполняет контейнер относителньно его высоты и ширины
+cover - подстраивается под ширину элемента, в который вставлен, но при этом обрезается, где не влез
+fill - растягивается до размеров контейнера
+contain - вставляется пропорционально своему размеру, оставляя пустые места
+none - не меняет размер
+scale-down - выбирает наименьший размер для размещения между none и contain

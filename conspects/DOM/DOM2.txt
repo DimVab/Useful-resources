@@ -1,0 +1,144 @@
+1. Вместо вставки кода через innerHTML и insertAdjacentHTML можно создать элемент и добавить его в DOM
+
+Создать элемент. Методы:
+.createElement('...') - принимает на вход имя тэга
+.createTextNode('...') - принимает на вход текст узла
+
+* Созданные элементы хранятся в переменной и ещё не добавлены в DOM
+** но, если создать img и установить src, то браузер загрузит изображение ещё до того, как его добавят на страницу (это полезно когда нужно заранее подгружать  картинки)
+
+
+2. Добавление элементов на страницу
+
+Чтобы добавить элемент, нужна ссылка на узел, относительно которого вставляется элемент (element1)
+Элемент, который будем добавлять (element2) / либо строку
+
+element1.append(element2) - добавить в конец element1
+element1.prepend(element2) - добавить в начало
+element1.before(element2) - добавить до
+element1.after(element2) - добавить после
+element1.replaceWith(element2) - заменить element1 на element2
+
+list.append(listItem);
+
+В аргумент можно записывать неограниченное кол-во аргументов (добавятся сразу несколько)
+
+list.append(listItem1, listItem2, listItem3);
+
+Можно разложить массив в качестве аргументов
+
+
+3. Удаление элементов
+
+Методы:
+.remove() - удалить
+.closest('...') - выбрать близжайший родительский элемент с переданным селектором
+
+Пример:
+const deleteButton = document.querySelector('.todo__item-button');
+
+deleteButton.addEventListener('click', function () {
+  const listItem = deleteButton.closest('.todo__item');
+  listItem.remove();
+}); 
+
+Ещё пример:
+resetButton.addEventListener('click', function () {
+  const songs = document.querySelectorAll('.song');
+  
+  songs.forEach((item) => {
+    item.remove();
+  });
+});
+
+
+4. Перемещение элементов
+
+.children - свойство, которое выбирает псевдомассив дочерних элементов
+
+const listItems = list.children;
+// переместили первый элемент todo-листа в конец
+list.append(listItems[0]); 
+
+(это работает и для prepedd, before, after, replaceWith)
+
+
+5. Клонирование элементов
+
+.cloneNode(true/false)
+true - скопировать элемент вместе с содержимым
+false - скопировать без содержимого
+
+Таким способом не скопируются обработчкики событий. Их придётся добавить заново
+Также данный метод только копирует элемент, но не добавляет его в DOM. Для этого к копии используют .append или др метод добавления
+
+const elementCopy = element.cloneNode(true);
+
+container.append(elementCopy); 
+
+
+6. Template-элементы
+
+Тэг <template></template>
+Это заготовка вёрстки для создания элементов. В HTML не содержится
+Удобен тем, что не нужно писать много кода на JS через createElement и .append
+
+1) получить элемент через .querySelector
+1.1) получить содержимое через св-во .content
+const userTemplate = document.querySelector('#user').content
+2) клонировать, наполнить содержимым и вставить в DOM
+
+Подключается в конце body перед <script>
+
+
+7. Объект Event
+
+У метода addEventListener есть функция-обработчик, которая может иметь параметр - объект event
+Event содержит информацию и о произошедшем событии, и о кликнутом элементе
+*(называться может и по-другому: event, evt, e)
+
+button.addEventListener('click', function (event) {
+    console.log(event);
+}); 
+в консоль выведется информация о кликнутом элементе (кнопке (одной, а не всех)
+
+У объекта event есть св-во target. В нём хранится элемент, на котором сработало событие
+
+button.addEventListener('click', function (evt) {
+    const eventTarget = evt.target;
+    eventTarget.setAttribute('disabled', true);
+}); 
+
+
+Вот как добавлять лайки правильно:const songLike = songElement.querySelector('.song__like');
+songLike.addEventListener('click', function(evt) {
+    const evtTarget = evt.target;
+    evtTarget.classList.toggle('song__like_active');
+  })
+
+
+8. Родственные связи в DOM
+
+Каждый элемент содержит ссылки на родителей, детей и соседей. Эти ссылки хранятся в св-вах
+*данные свойства доступны только для чтения. перезаписать нельзя
+
+.parentElement - ссылка на род. элемент
+console.log(element.parentElement);
+
+.children - содержит псевдомассив всех дочерних элементов
+console.log(body.children); // HTMLCollection(3) [p, p, p] 
+
+.firstElementChild
+.lastElementChild
+Первый и последний ребёнок
+* если нет дочерних элементов, вернётся null
+
+.previousElementSibling
+.nextElementSibling
+ссылки на предыдущий и следующий соседний элементы
+
+* можно выбрать определённый тэг по индексу:
+const element = document.querySelectorAll('p')[1];
+
+** можно выбрать соседа соседа:
+console.log(element.nextElementSibling.nextElementSibling)

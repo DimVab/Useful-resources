@@ -1,0 +1,58 @@
+Основные и распространённые д-я пользователя:
+
+1) 'click'
+2) 'mouseover' - наведение мыши
+3) 'mouseout' - убрать указатель мыши с элемента
+4) 'scroll' - прокручивание элемента
+5) 'submit' (связан с атрибутом форм (кнопки))
+
+
+Методы:
+element.addEventListener (eventName, handler)
+
+element - элемент, которому добавляем слушаетль
+eventName - событие, на которое нужно отреагировать ('click' / 'scroll' / 'mouseover')
+handler - функция-обработчик события (вызывается, когда событие сработает) (пишется без скобок)
+
+
+Работает так:
+let element = document.querySelector('.my-element');
+
+function showClick() {
+  console.log('Мы кликнули по элементу');
+}
+
+element.addEventListener('click', showClick); 
+
+либо
+
+let element = document.querySelector('.my-element');
+
+element.addEventListener('click', function () {
+  console.log('Мы кликнули по элементу');
+}); 
+(безымянная функция)
+
+Такие функции (которые передаются в качестве аргумента в скобках другой функции) называются call-back-функции. Они вызываются после той функции (метода), в аргументе которого находятся
+
+
+При отправке формы при отсутствующем атрибуте action страница перезагружается (стандартное событие)
+Чтобы этого не происходило, нужно передать в функцию-обработчик параметр evt
+В самом начале тела функции вызвать метод evt.preventDefault() - это отменит стандартное событие
+
+
+
+Ещё пример добавления блоков:
+let addButton = container.querySelector('.form__submit-btn_action_add');
+
+function addSong() {
+  songsContainer.innerHTML += `
+  <div class="song">
+    <h4 class="song__artist">Кино</h4>
+    <p class="song__title">Дерево</p>
+    <button class="song__like"></button>
+  </div> 
+`;
+}
+
+addButton.addEventListener('click', addSong);
