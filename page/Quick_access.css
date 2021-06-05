@@ -1,4 +1,13 @@
+@import url(../Blocks/root/root.css);
+@import url(../Blocks/root/_place/root_place_qa.css);
+
 @import url(../Blocks/article/article.css);
+/* блок section */
+@import url(../Blocks/section/section.css);
+/* блок footer */
+@import url(../Blocks/footer/footer.css);
+@import url(../Blocks/footer/_place/footer_place_qa.css);
+
 
 * {
   margin: 0;
@@ -33,12 +42,6 @@
 .navigation__section:hover {
   opacity: .7;
   transition: opacity 0.5s;
-}
-
-.qa {
-  padding: 70px 0;
-  /* position: relative;
-  background-color: ; */
 }
 
 .main-qa {
@@ -100,7 +103,6 @@ footer {
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  /* background-color: brown; */
   background-image: linear-gradient(to right, brown, #8B0000);
   color: white;
 }

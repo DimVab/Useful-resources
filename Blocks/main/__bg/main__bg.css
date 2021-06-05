@@ -3,4 +3,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-left: 150px;
+}
+
+@media screen and (max-width: 1289px) {
+  .main__bg {
+    padding-left: 0;
+  }
 }
